@@ -1,0 +1,43 @@
+[
+    {
+        "id": "b681bff93cd2f358",
+        "type": "ui_template",
+        "z": "6e3cdb784c0ae6b5",
+        "group": "16f4f8c2c00e1913",
+        "name": "",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "format": "<div class=\"button-container\">\n          <input type=\"checkbox\" id=\"btnCheckbox\" class=\"btn-checkbox\" />\n          <label for=\"btnCheckbox\" class=\"btn active\" id=\"btn\">\n            <div class=\"btn-outer\">\n              <div class=\"btn-inner\">\n                <svg\n                  class=\"btn-icon\"\n                  version=\"1.1\"\n                  id=\"Capa_1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n                  x=\"0px\"\n                  y=\"0px\"\n                  viewBox=\"0 0 30.143 30.143\"\n                  style=\"enable-background: new 0 0 30.143 30.143\"\n                  xml:space=\"preserve\"\n                >\n                  <g>\n                    <path\n                      d=\"M20.034,2.357v3.824c3.482,1.798,5.869,5.427,5.869,9.619c0,5.98-4.848,10.83-10.828,10.83\n                  c-5.982,0-10.832-4.85-10.832-10.83c0-3.844,2.012-7.215,5.029-9.136V2.689C4.245,4.918,0.731,9.945,0.731,15.801\n                  c0,7.921,6.42,14.342,14.34,14.342c7.924,0,14.342-6.421,14.342-14.342C29.412,9.624,25.501,4.379,20.034,2.357z\"\n                    />\n                    <path\n                      d=\"M14.795,17.652c1.576,0,1.736-0.931,1.736-2.076V2.08c0-1.148-0.16-2.08-1.736-2.08\n                  c-1.57,0-1.732,0.932-1.732,2.08v13.496C13.062,16.722,13.225,17.652,14.795,17.652z\"\n                    />\n                  </g>\n                </svg>\n              </div>\n            </div>\n          </label>\n        </div>\n        <style>\n        .swich{\n            display:none;\n        }\n            .button-container {\n  max-width: 300px;\n  max-height: 300px;\n  text-align: center;\n  background-color: black;\n  display: inline-block;\n  padding: 1rem;\n  border-radius: 1rem;\n}\n.button-container .btn-checkbox {\n  display: none;\n}\n.btn,\n.btn-inner,\n.btn-outer {\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n}\n.button-container .btn {\n  --btn-color: red;\n  cursor: pointer;\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  background-color: #030104;\n  color: white;\n  box-shadow: inset 0 -1px 1px 0 white, inset 0 1px 3px 0 black;\n}\n.button-container .btn-outer {\n  background-color: var(--btn-color);\n  box-shadow: 1px 1px 2px 2px black, inset 0 0 2px 0px black;\n\n  width: 85%;\n  height: 85%;\n  border-radius: 50%;\n}\n.button-container .btn-inner {\n  background: black linear-gradient(to top, rgba(255, 255, 255, 0.4), black);\n  box-shadow: inset 0 1px 1px 0 white, inset 0 -3px 5px 0 black,\n    0 0 5px 2px black;\n\n  width: 80%;\n  height: 80%;\n}\n.button-container .btn-icon {\n  width: 30px;\n  height: 30px;\n}\n.button-container .btn-icon path {\n  fill: var(--btn-color);\n}\n\n.button-container .btn.active {\n  --btn-color: rgb(18, 223, 15);\n}\n\n        </style>\n        <script>\n(function (scope) {\n  const checkbox = document.getElementById(\"btnCheckbox\");\n\n  const btn = document.getElementById(\"btn\");\n\n  const handleChange = () => {\n    btn.classList.remove(\"active\");\n    const status = checkbox.checked;\n    if (status) {\n      console.log(\"payload start\");\n      btn.classList.add(\"active\");\n      scope.send({ payload: true });\n    } else {\n      console.log(\"payload stop\");\n      scope.send({ payload: false });\n    }\n  };\n  handleChange();\n\n  checkbox.addEventListener(\"change\", () => {\n    handleChange();\n  });\n})(scope);\n\n\n\n        </script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 320,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "icon": "node-red-dashboard/ui_switch.png"
+    },
+    {
+        "id": "16f4f8c2c00e1913",
+        "type": "ui_group",
+        "name": "radio button",
+        "tab": "6877e6d1ed30bb01",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6877e6d1ed30bb01",
+        "type": "ui_tab",
+        "name": "power section",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
